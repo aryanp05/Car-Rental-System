@@ -14,7 +14,9 @@ void getCarInfo(int counter, int d) {
   // Creates File Object & Retrives Data
   ifstream getStats;
   getStats.open (carHolder[counter]);
-  if (getStats.fail()){ exit (1);}
+  if (getStats.fail()){ 
+    printf("HEY"); 
+    exit (1);}
   getline(getStats, carName);
   getStats >> carValueA >> carValueB;
   getStats.close();
@@ -27,7 +29,7 @@ void getCarInfo(int counter, int d) {
 void optionOne(int d) {
 
   // 3.2) Intializes Variables + Clears Console
-  system("clear");
+  if (system("clear") == 1) {}
   int counter = 0;
   string carName;
   char returnBack;
@@ -84,8 +86,8 @@ void optionOne(int d) {
     cout << "\033[7;31m" << "\t\t\t\t\t\t\t$" << grossProfit;
   }
   cout << endl << endl << endl;
-  
-  
+
+
   // 3.4) Asks to return Owner Menu
   usleep(500000*d*3);
   // Asks user if they want to return to the menu

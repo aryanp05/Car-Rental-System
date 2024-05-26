@@ -9,7 +9,7 @@ using namespace std;
 void optionFour(int d) {
 
   // 6.1) Clears Console + Initializes Variables
-  system ("clear");
+  if (system("clear") == 1) {}
   char delayToggle;
   char returnBack;
 

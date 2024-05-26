@@ -22,7 +22,7 @@ void optionThree(string ownerName, string ownerPassword, int d){
   ownerPW.close();
 
   // 5.2) Clears Console + Initalizes Variables
-  system ("clear");
+  if (system("clear") == 1) {}
   char changeToggle;
 
   // 5.3.1) Confirms if Owner wants to change the login credintials
@@ -53,7 +53,7 @@ void optionThree(string ownerName, string ownerPassword, int d){
       changeName << ownerName;
       changeName.close();
     } 
-    
+
     // 5.5.1) Asks if owner wants to change password
     usleep(500000*d);
     cout << endl << "Would you like to change password? (Y/N): ";

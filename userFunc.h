@@ -13,8 +13,8 @@ void customerWelcome(string userName, int d) {
 
   // 7.1) Initializing Variables + Clearing System
   int userChoice;
-  system ("clear");
-  
+  if (system("clear") == 1) {}
+
   // 7.2) Displays User's name and options of functions
   usleep(500000*d);
   cout << "Welcome " << userName << ", We're glad you choose to rent with us!" << endl;
@@ -31,7 +31,7 @@ void customerWelcome(string userName, int d) {
   // 7.3) Asks for user input
   cout << "Enter Choice: ";
   cin >> userChoice;
-  
+
   // 7.4) Based on input choice, runs Function
   if (userChoice == 1) {
     user1(d);

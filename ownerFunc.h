@@ -14,8 +14,8 @@ void ownerFunction(int d, string ownerName, string ownerPassword){
 
   // 2.1) Initializing Variables + Clearing Console
   int ownerChoice;
-  system ("clear");
-  
+  if (system("clear") == 1) {}
+
   // 2.2) Welcomes Admin and Displays Options 
   usleep(500000*d);
   cout << "Welcome " << ownerName << endl << endl;
@@ -42,10 +42,10 @@ void ownerFunction(int d, string ownerName, string ownerPassword){
   // 2.3) Runs Owner's Desired Action
   cout << endl << "Enter Option: ";
   cin >> ownerChoice; 
-  
+
     // 2.3.1) Return Home Function
     if (ownerChoice == 5) {
-    system ("clear");
+    if (system("clear") == 1) {}
     // 2.3.2) Toggle Delays Function
     } else if (ownerChoice == 4) {
       optionFour(d);

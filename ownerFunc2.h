@@ -43,7 +43,7 @@ void changesVehicles(int d, int type, int round) {
   AMN.close();
 
   // Clears the console and asks user how much they want to change the car amount by
-  system ("clear");
+  if (system("clear") == 1) {}
   cout << "How many cars would you like to\nadd or subtract (add '-') from " << unit[type] << ": "; 
   // Takes input and changes it
   cin >> change;
@@ -52,7 +52,7 @@ void changesVehicles(int d, int type, int round) {
   usleep(1000000*d);
   // Outputs the total amount of cars
   cout << "There are now " << unit[type] << " models";
-  
+
   // Creates an Fstream object to write the data into the file
   ofstream changeAmount;
   changeAmount.open (carHolder[round]);
@@ -95,9 +95,8 @@ void readInput(int choice, int d, int type, int round) {
 // 4.) Owner's Second  Function - Inventory Altercation
 void optionTwo(int d) {
   // 4.2) Initializing Variables + Clears System
-  system("clear");
-  int choice, unit[2], profit, expense, change, round, PH;
-  int type = 0;
+  if (system("clear") == 1) {}
+  int choice, profit, expense, PH, round = 0, type = 0;
 
   // 4.3) Displays a list of options 
   usleep(500000*d);
@@ -120,7 +119,7 @@ void optionTwo(int d) {
   // 4.4) Alters Invenotry
     // Runs if choice is 1 (Available Models)
     if (choice == 1) {
-      system ("clear");
+      if (system("clear") == 1) {}
       // Runs Function 4.1.1) To Display Choices
       displayVehicles(d, type);
       // Takes the user input
@@ -134,7 +133,7 @@ void optionTwo(int d) {
       else if (choice == 2) {
         // Setting type to 1 to inform function to change Total Models
         type = 1;
-        system ("clear");
+        if (system("clear") == 1) {}
         // Runs Function 4.1.1) To Display Choices
         displayVehicles(d, type);
         // Takes the user input in
@@ -154,7 +153,7 @@ void optionTwo(int d) {
         profitIntake.close();
 
         // Clears System
-        system ("clear");
+        if (system("clear") == 1) {}
         // Displays current profit
         cout << "The current profit is $" << profit << endl << endl;
         usleep(1000000*d);
@@ -185,7 +184,7 @@ void optionTwo(int d) {
         expenseIntake.close();
 
         // Clears System
-        system ("clear");
+        if (system("clear") == 1) {}
         // Displays current expenses
         cout << "The current expenses is $" << expense << endl << endl;
         usleep(1000000*d);
@@ -205,7 +204,7 @@ void optionTwo(int d) {
         // Displays New Expenses
         cout << "Expenses is now $" << expense;
       }
-    
+
     cout << endl << endl << endl;
     // 4.5) Asks to return Owner Menu
     usleep(500000*d*3);

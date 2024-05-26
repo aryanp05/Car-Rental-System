@@ -13,7 +13,6 @@ using namespace std;
 void introFunc() {
 
   // 1.1) Initializing Variables + Creating File Objects to get Values
-  bool owner = false;
   string userName;
   string inputPassword;
   int attemptPW = 0;

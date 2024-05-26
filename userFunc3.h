@@ -8,7 +8,7 @@ using namespace std;
 // 10.) Function to provide help information
 void user3(int d) {
   // Clear System
-  system("clear");
+  if (system("clear") == 1) {}
 
   // 10.1) Tells user methods to contact for help
   cout << "Welcome to the help center,\nWe're always happy to help" << endl << endl ;

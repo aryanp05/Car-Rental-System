@@ -22,7 +22,7 @@ void user1(int d) {
   string milage[6] = {"Unlimited", "Unlimited", "Unlimited", "Unlimited", "Unlimited", "Unlimited"};
   string type[6] = {"Automatic", "Automatic", "Automatic", "Automatic", "Automatic", "Automatic"};
   // 8.1.3) Clearing the console
-  system("clear");
+  if (system("clear") == 1) {}
 
   // 8.2) Outputing a welcome message
   usleep(500000*d);
@@ -39,12 +39,14 @@ void user1(int d) {
   cin >> userChoice;
   userChoice -= 1;
   // Clears system
-  system("clear");
+  if (system("clear") == 1) {}
 
   // 8.5) Gets Information from the carFile
   ifstream getStats;
   getStats.open (carFile[userChoice]);
-  if (getStats.fail()){ exit (1);}
+  if (getStats.fail()){ 
+    cout << "HEY";
+    exit (1);}
   getline(getStats, carName);
   getStats >> unitA >> unitB;
   getStats.close();
@@ -90,7 +92,7 @@ void user1(int d) {
     // Recursion
     user1(d);
   }
-  
+
   // 8.8) Asks to confirm renting
   usleep(100000*d);
   char rentOption;
@@ -102,7 +104,7 @@ void user1(int d) {
   // If user wants to rent, runs code  
   } else if (rentOption == 'Y') {
     // Clears system + Initializing Variables
-    system("clear");
+    if (system("clear") == 1) {}
     string fName, lName, address;
     long long cardInfo1, cardInfo2, cardInfo3;
 
@@ -126,7 +128,7 @@ void user1(int d) {
     // Confirms Purchase with user
     usleep(1000000*d);
     cout << "Your purchase has been sucessful, you may pick up your rental\ncar. We hope you have a great time in your new rental!";
-    
+
     //Opens file and reduces the available amount by 1
     unitA -= 1;
     ofstream changeAmount;

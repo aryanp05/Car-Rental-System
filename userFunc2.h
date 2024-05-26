@@ -3,6 +3,7 @@
 #include <fstream>
 #include <stdlib.h>
 #include <unistd.h>
+#include <cstdlib>
 using namespace std;
 
 // 9.) Function to return vehicles
@@ -13,7 +14,7 @@ void user2(int d) {
   long long cardInfo1;
   string carName, fName, lName;
   string carFile[6] = {"#car.txt", "#motorcycle.txt", "#jeep.txt", "#taxi.txt", "#van.txt", "#truck.txt"};
-  system("clear");
+  if (system("clear") == 1) {}
 
   // 9.2) Welcomes user
   usleep(1000000*d);
@@ -39,7 +40,7 @@ void user2(int d) {
   cout << "Enter Model Number: ";
   cin >> userChoice;
   userChoice -= 1;
-  
+
   // 9.4) Gets Information from the carFile
   ifstream getStats;
   getStats.open (carFile[userChoice]);
@@ -47,10 +48,11 @@ void user2(int d) {
   getline(getStats, carName);
   getStats >> unitA >> unitB;
   getStats.close();
-  
+
   // 9.5) Asks user how many days they have been renting for
   // Clears System
-  system("clear");
+  if (system("clear") == 1) {}
+    
   cout << "How many Days have you rented the car for: ";
   cin >> days;
 
@@ -73,7 +75,7 @@ void user2(int d) {
   cin >> cardInfo2;
   cout << "CVS: ";
   cin >> cardInfo3;
-  
+
   // Thanks user for using rental system
   cout << endl;
   usleep(1000000*d);
@@ -86,7 +88,7 @@ void user2(int d) {
     if (changeAmount.fail()) {exit(1);}
     changeAmount << carName << endl << unitA << endl << unitB;
     changeAmount.close();
-  
+
   // Gets Profit amount from the file
     ifstream profitIntake;
     profitIntake.open ("profit.txt");
