@@ -30,13 +30,11 @@ GNU Compiler Collection (GCC)
    ![Car Display](screenshots/car-display.png)
    ![Financial Stats](screenshots/finance-stats.png)
    ![Jeep Renting](screenshots/jeep-rent.png)
-   ![Truck Renting](screenshots/truck-rent.png)
-   ![Car Renting](screenshots/car-rent.png)
    ![Owner Menu](screenshots/owner-menu.png)
 
 ## Usage
 
-To you the car rental system, you can clone the git repository or access the replit link: https://replit.com/join/gtxxptqgde-aryanpatel0705
+To use the car rental system, you can clone the git repository or access the replit link: https://replit.com/join/gtxxptqgde-aryanpatel0705
 
 ## License
 
